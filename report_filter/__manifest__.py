@@ -15,6 +15,8 @@ Filter Partner In General Ledger Report
              'wizard/account_report_general_ledger_view.xml',
              'views/report_generalledger.xml',
     ],
+    'price': 50,
+    'currency': 'EUR',
     'installable': True,
     'auto_install': False,
 }
