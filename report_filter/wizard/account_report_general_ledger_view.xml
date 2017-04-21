@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+    <record id="account_report_general_ledger_partner_filter_view" model="ir.ui.view">
+        <field name="name">General Ledger</field>
+        <field name="model">account.report.general.ledger</field>
+        <field name="inherit_id" ref="account.account_report_general_ledger_view"/>
+        <field name="arch" type="xml">
+        <data>
+                <xpath expr="//field[@name='journal_ids']" position="replace">
+<!--                	<field name="analytic_show" /-->
+                </xpath>
+        	
+                <xpath expr="//form" position="inside">
+                	<notebook>
+						<page string="Partners Filters" name="partners">
+                            <separator string="Partners for Print" colspan="4"/>
+                            <field name="partner_ids" colspan="4" nolabel="1"/>
+                        </page>
+                        <page string="Journals">
+                            <separator string="Filter On Journals" colspan="4"/>
+                            <field name="journal_ids" widget="many2many_tags" colspan="4" nolabel="1"/>
+                        </page>
+                        <page string="Accounts">
+                            <separator string="Filter On Accounts" colspan="4"/>
+                            <field name="account_ids"  colspan="4" nolabel="1"/>
+                        </page>
+                        <!--<page string="Analytics">
+                            <separator string="Filter On Analytics" colspan="4"/>
+                            <field name="analytic_ids"  colspan="4" nolabel="1"/>
+                        </page>-->
+                    </notebook>
+                </xpath>
+                
+        </data>
+        </field>
+    </record>
+	</data>
+</openerp>
