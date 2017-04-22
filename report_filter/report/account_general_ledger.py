@@ -28,7 +28,7 @@ class ReportGeneralLedger(models.AbstractModel):
         cr = self.env.cr
         MoveLine = self.env['account.move.line']
         move_lines = dict(map(lambda x: (x, []), accounts.ids))
-        print partners,"@@@@@@@@@@@@@@@@",accounts
+        
         # Prepare initial sql query and Get the initial move lines
         if init_balance:
             init_tables, init_where_clause, init_where_params = MoveLine.with_context(date_from=self.env.context.get('date_from'), date_to=False, initial_bal=True)._query_get()
@@ -68,7 +68,7 @@ class ReportGeneralLedger(models.AbstractModel):
 
         # Get move lines base on sql query and Calculate the total balance of move lines
         if len(partners) == 0:
-            print"###########"
+            
             sql = ('SELECT l.id AS lid, l.account_id AS account_id, l.date AS ldate, j.code AS lcode, l.currency_id, l.amount_currency, l.ref AS lref, l.name AS lname, COALESCE(l.debit,0) AS debit, COALESCE(l.credit,0) AS credit, COALESCE(SUM(l.debit),0) - COALESCE(SUM(l.credit), 0) AS balance,\
             m.name AS move_name, c.symbol AS currency_code, p.name AS partner_name\
             FROM account_move_line l\
@@ -123,7 +123,7 @@ class ReportGeneralLedger(models.AbstractModel):
 
     @api.multi
     def render_html(self, docids, data=None):
-        print"@@@@####$$$$"
+        
         self.model = self.env.context.get('active_model')
         docs = self.env[self.model].browse(self.env.context.get('active_ids', []))
         init_balance = data['form'].get('initial_balance', True)
@@ -133,19 +133,12 @@ class ReportGeneralLedger(models.AbstractModel):
         if data['form'].get('journal_ids', False):
             codes = [journal.code for journal in self.env['account.journal'].search([('id', 'in', data['form']['journal_ids'])])]
         accounts_ids = docs.account_ids
-#         analytic_ids = docs.analytic_ids
-        
-#         if analytic_ids:
-#             analytic_ids
-#         else:
-#             analytic_ids = self.env['account.analytic.account'].search([])
-    
+#      
         if accounts_ids:
             accounts = accounts_ids
         else:
             accounts = docs if self.model == 'account.account' else self.env['account.account'].search([])
         partners = docs.partner_ids
-#         show_analytic = data['form'].update({'analytic_show':docs.analytic_show})
         accounts_res = self.with_context(data['form'].get('used_context',{}))._get_account_move_entry(accounts, init_balance, sortby, display_account,partners)
         docargs = {
             'doc_ids': docids,
