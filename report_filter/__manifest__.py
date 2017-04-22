@@ -4,7 +4,7 @@
     'version' : '1.0',
     'summary': 'Report General Ledger ',
     'description': """
-Filter Partner In General Ledger Report 
+Filter Partner and Account ON General Ledger Report 
 ====================
     """,
     'category': 'Account',
@@ -17,6 +17,7 @@ Filter Partner In General Ledger Report
     ],
     'price': 50,
     'currency': 'EUR',
+    'images':  ['static/description/Banner.png'],
     'installable': True,
-    'auto_install': False,
+    
 }
