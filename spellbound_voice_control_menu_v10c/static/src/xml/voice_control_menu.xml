@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+	<t t-name="voice_control_menu.voice_control_microphone">
+	    <li class="oe_topbar_item oe_voice_start_stop" title="Voice Control Start/Stop" >
+	        <a href="#"><i class="fa fa-microphone" status="stop" style="color:red;"></i></a>
+	    </li>
+	</t>
+</templates>

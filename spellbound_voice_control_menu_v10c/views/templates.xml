@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+		<template id="assets_backend" name="voice_control_menu assets" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+	            <script type="text/javascript" src="/spellbound_voice_control_menu_v10c/static/lib/angular.min.js"></script>
+           	<script type="text/javascript" src="/spellbound_voice_control_menu_v10c/static/lib/voice-commands.js"></script>
+            	<script type="text/javascript" src="/spellbound_voice_control_menu_v10c/static/lib/voice-commands.min.js"></script>
+                <script type="text/javascript" src="/spellbound_voice_control_menu_v10c/static/src/js/voice_control_menu.js"></script>
+            </xpath>
+        </template>
+    </data>
+</odoo>
