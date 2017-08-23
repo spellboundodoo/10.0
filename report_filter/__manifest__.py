@@ -8,7 +8,7 @@ Filter Partner and Account ON General Ledger Report
 ====================
     """,
     'category': 'Account',
-    'author' : 'Spellbound Soft Solution',
+    'author' : 'Spellbound Soft Solutions',
     'website': 'https://www.spellboundss.com',
     'depends' : ['base', 'account', 'report',],
     'data': [
