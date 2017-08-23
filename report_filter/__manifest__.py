@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name' : 'Filter on GL Report',
+    'name' : 'Partner General Ledger',
     'version' : '1.0',
     'summary': 'Report General Ledger ',
     'description': """
