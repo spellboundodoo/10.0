@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 {
-    'name' : 'Partner General Ledger',
+    'name' : 'General Ledger Report filter',
     'version' : '1.0',
-    'summary': 'Report General Ledger ',
+    'summary': 'General Ledger Report Partner and Account Filter',
     'description': """
 Filter Partner and Account ON General Ledger Report 
 ====================
