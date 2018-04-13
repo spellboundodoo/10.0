@@ -15,6 +15,7 @@ Filter Partner and Account ON General Ledger Report
              'wizard/account_report_general_ledger_view.xml',
              'views/report_generalledger.xml',
     ],
+    'license': "AGPL-3",
     'price': 50,
     'currency': 'EUR',
     'images':  ['static/description/Banner.png'],
